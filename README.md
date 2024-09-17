@@ -12,10 +12,7 @@ docker compose up -d
 ```
 
 3. Upload/Download files as desired to/from client.  See [**Client Usage**](#client-syntax).
-
-***
-
-## Stop and remove the container when done.
+4.  Stop and remove the container when done.
 
 ```shell
 docker compose down
