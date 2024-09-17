@@ -4,14 +4,20 @@ For those rare occasions you need a TFTP server.
 
 ## Usage
 
-1.  Place files you wish to be accessible via tftp in `./files` folder.
-2.  Run a tftp daemon container.
+1. Clone this repo to the computer you want to be the tftp server.
+
+```shell
+git clone https://github.com/itdojo/tftp-server.git
+```
+
+2.  Place files you wish to be accessible via tftp in `./files` folder.
+3.  Run a tftp daemon container.
 
 ```shell
 docker compose up -d
 ```
 
-3. Upload/Download files as desired to/from client.  See [**Client Usage**](#client-syntax).
+3.  From your client, upload/download files as desired.  See [**Client Syntax**](#client-syntax).
 4.  Stop and remove the container when done.
 
 ```shell
@@ -22,8 +28,7 @@ docker compose down
 
 ## Setting TFTP Variables
 
-* You can modify TFTP variables by editing `config/tftp-hpa.conf`.  
-> For general usage, you should not need to modify any settings.  Refer to the tftp-hpa manpage for variable options.
+* You can modify TFTP variables by editing `./config/tftp-hpa.conf`.  For general usage, you should not need to modify any settings.  Refer to the tftp-hpa manpage for variable options.
 
 ***
 
