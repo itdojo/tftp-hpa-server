@@ -28,7 +28,7 @@ docker compose down
 
 ## Setting TFTP Variables
 
-* You can modify TFTP variables by editing `./config/tftp-hpa.conf`.  For general usage, you should not need to modify any settings.  Refer to the tftp-hpa manpage for variable options.
+* You can modify TFTP variables by editing `./config/tftp-hpa.conf`.  For general usage, you should not need to modify any settings.  Refer to the [tftp-hpa manpage](https://manpages.debian.org/testing/tftpd-hpa/tftpd.8.en.html) for variable options.
 
 ***
 
@@ -36,9 +36,10 @@ docker compose down
 
 For MacOS and Debian/Ubuntu
 
-- [ ] Install tftp-hpa on client.
+- [ ] Install `tftp-hpa` on client (or whatever tftp client you prefer).  TFTP client is built-in on MacOS.
 
 ```shell
+# Debian/Ubuntu
 sudo apt update && sudo apt install -y tftp-hpa
 ```
 
@@ -49,6 +50,7 @@ sudo apt update && sudo apt install -y tftp-hpa
 Syntax:
 
 ```shell
+# Connet to tftp server
 tftp <server-ip>
 
 # Get single file
@@ -58,7 +60,7 @@ get <filename>
 get <remotefile> <localfile>
 
 # Get multiple files
-get file1 file2 file3...
+get file1 file2 file3.. fileN
 
 # Exit
 quit
@@ -77,6 +79,7 @@ tftp -v <server-ip> -c get <filename>
 Syntax:
 
 ```shell
+# Connect to tftp server
 tftp <server-ip>
 
 # Upload a single file
@@ -102,5 +105,7 @@ tftp -v <server-ip> -c put <filename>
 
 ## TFTP Mode
 
-If you are using Windows you might need to specify the mode (`-m mode`) in order to preserve carriage returns, etc. for text files.  You will know this if your uploaded/downloaded file are corrupted or lose their basic formatting.  If that happens, visit https://manpages.debian.org/bookworm/tftp-hpa/tftp.1.en.html for additional info.
+If you are using Windows you might need to specify the mode (`-m mode`) in order to preserve carriage returns, etc. for text files.  
+You will know this if your uploaded/downloaded file are corrupted or lose their basic formatting.  
+If that happens, visit https://manpages.debian.org/bookworm/tftp-hpa/tftp.1.en.html for additional info.
 
